@@ -8,7 +8,14 @@ class PostsController < ApplicationController
   end
 
   def new
+  end
+
+  def create
     @post = Post.new
+    @post.title = "Title Goes Here"
+    @post.description = "Desc goes here..."
+    @post.save
+    redirect_to post_path(@post)
   end
 
   # add create method here
